@@ -86,7 +86,7 @@ namespace LinkedListOperations
             int count = 1;
             while (temp != null)
             {
-                if (temp.data == value)
+                if (temp.next.data == value)
                 {
                     Console.WriteLine("\nFound {0} at index {1}", temp.data, count);
                     return temp;
