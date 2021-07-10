@@ -12,6 +12,8 @@ namespace LinkedListOperation
             Console.WriteLine("Enter 1-Create Linked");
             Console.WriteLine("Enter 2-to Add at First");
             Console.WriteLine("Enter 3-to Append data at Last");
+            Console.WriteLine("Enter 4-to Add data in between of two nodes in Linked List");
+
             int ch = Convert.ToInt32(Console.ReadLine());
             switch (ch)
             {
@@ -35,6 +37,15 @@ namespace LinkedListOperation
                     obj.InsertLast(70);
                     //Display Operation
                     Console.WriteLine("*****Insertion at Last*****");
+                    obj.Display();
+                    break;
+                case 4:
+                    obj.InsertLast(56);
+                    obj.InsertLast(70);
+                    //Display Operation
+                    Console.WriteLine("*****Insertion in Between two nodes*****");
+                    obj.Display();
+                    obj.InsertInBetween(2, 30);
                     obj.Display();
                     break;
             }

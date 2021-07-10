@@ -47,8 +47,40 @@ namespace LinkedListOperations
             }
 
         }
-        //Display Linked list Data
-        public void Display()
+        //Insert a node between two nodes
+        public void InsertInBetween(int position, int data)
+        {
+            Node newNode = new Node(data);
+            if (position == 1)
+            {
+                newNode.next = this.head;
+                head = newNode;
+            }
+            else if (position < 1)
+            {
+                Console.WriteLine(" Value less than 1! Invalid Position.");
+            }
+            else if (position > 0)
+            {
+                Node temp = head;
+                while (position >= 0)
+                {
+                    if (position == 2)
+                    {
+                        Console.WriteLine("\n******After inserting in between Two nodes***** ");
+                        newNode.next = temp.next;
+                        temp.next = newNode;
+                        break;
+                    }
+                    temp = temp.next;
+                    Console.WriteLine(position);
+                    position--;
+                }
+
+            }
+        }
+            //Display Linked list Data
+            public void Display()
         {
             int count = 1;
             Node temp = this.head;
