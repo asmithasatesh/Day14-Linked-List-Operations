@@ -86,6 +86,24 @@ namespace LinkedListOperations
             this.head = this.head.next;
             Display();
         }
+        //Delete at Last
+        public void PopLast()
+        {
+            Console.WriteLine("\n*****Delete Last node*****");
+            Node temp = DeleteLastNode();
+            Console.WriteLine("Poped element is: {0}", temp.next.data);
+            temp.next = null;
+            Display();
+        }
+        public Node DeleteLastNode()
+        {
+            Node temp = this.head;
+            while (temp.next.next != null)
+            {
+                temp = temp.next;
+            }
+            return temp;
+        }
         //Display Linked list Data
         public void Display()
         {
