@@ -58,6 +58,27 @@ namespace LinkedListOperations
             return (newNode.data);
 
         }
+        public int DeleteInBetween(int data)
+        {
+            Node temp = SearchDataAtPosition(data);
+            Console.WriteLine("\nData {0} has been deleted from linked list", temp.next.data);
+            temp.next = temp.next.next;
+            int sizeofList = SizeOfList();
+            Display();
+            return sizeofList;
+
+        }
+        public int SizeOfList()
+        {
+            Node temp = head;
+            int count = 0;
+            while (temp != null)
+            {
+                count++;
+                temp = temp.next;
+            }
+            return count;
+        }
         //Search a particular data
         public Node SearchDataAtPosition(int value)
         {
