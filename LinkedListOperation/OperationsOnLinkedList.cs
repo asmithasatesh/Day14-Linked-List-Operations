@@ -31,6 +31,22 @@ namespace LinkedListOperations
             }
             return temp;
         }
+
+        //Insert data to First
+        public void InsertAtFirst(int data)
+        {
+            Node newNode = new Node(data);
+            if (this.head == null)
+            {
+                head = newNode;
+            }
+            else
+            {
+                newNode.next = head;
+                head = newNode;
+            }
+
+        }
         //Display Linked list Data
         public void Display()
         {
