@@ -9,8 +9,9 @@ namespace LinkedListOperation
         {
             Console.WriteLine("Welcome to Linked List Program!");
             OperationsOnLinkedList obj = new OperationsOnLinkedList();
-            Console.WriteLine("Enter 1-to Add at Last");
+            Console.WriteLine("Enter 1-Create Linked");
             Console.WriteLine("Enter 2-to Add at First");
+            Console.WriteLine("Enter 3-to Append data at Last");
             int ch = Convert.ToInt32(Console.ReadLine());
             switch (ch)
             {
@@ -26,6 +27,14 @@ namespace LinkedListOperation
                     obj.InsertAtFirst(56);
                     //Display Operation
                     Console.WriteLine("*****Insertion at First*****");
+                    obj.Display();
+                    break;
+                case 3:
+                    obj.InsertLast(56);
+                    obj.InsertLast(30);
+                    obj.InsertLast(70);
+                    //Display Operation
+                    Console.WriteLine("*****Insertion at Last*****");
                     obj.Display();
                     break;
             }
