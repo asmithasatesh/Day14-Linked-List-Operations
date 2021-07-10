@@ -15,6 +15,7 @@ namespace LinkedListOperation
             Console.WriteLine("Enter 4-to Add data in between of two nodes in Linked List");
             Console.WriteLine("Enter 5-to Delete at first data of Linked List");
             Console.WriteLine("Enter 6-to Delete Last data of Linked List");
+            Console.WriteLine("Enter 7-to Search data from Linked List");
             int ch = Convert.ToInt32(Console.ReadLine());
             switch (ch)
             {
@@ -64,6 +65,15 @@ namespace LinkedListOperation
                     obj.Display();
                     //Pop Last Node
                     obj.PopLast();
+                    break;
+                case 7:
+                    obj.InsertLast(56);
+                    obj.InsertLast(30);
+                    obj.InsertLast(70);
+                    obj.Display();
+                    //Pop Last Node
+                    int searchValue = obj.SearchData(30);
+                    Console.WriteLine(searchValue);
                     break;
             }
         }

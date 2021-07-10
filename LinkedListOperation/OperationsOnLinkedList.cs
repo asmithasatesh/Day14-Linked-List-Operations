@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LinkedListOperations
 {
-    class OperationsOnLinkedList
+    public  class OperationsOnLinkedList
     {
         public Node head;
         //Insert data to Last
@@ -46,6 +46,24 @@ namespace LinkedListOperations
                 head = newNode;
             }
 
+        }
+        //Search a particular data
+        public int SearchData(int value)
+        {
+            Node temp = head;
+            int count = 1;
+            while (temp != null)
+            {
+                if (temp.data == value)
+                {
+                    Console.WriteLine("\nFound {0} at index {1}", temp.data, count);
+                    return temp.data;
+                }
+                temp = temp.next;
+                count++;
+            }
+            Console.WriteLine("\nCould not find value in Linked List!");
+            return default;
         }
         //Insert a node between two nodes
         public void InsertInBetween(int position, int data)
