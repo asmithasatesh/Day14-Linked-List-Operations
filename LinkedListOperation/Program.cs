@@ -17,6 +17,8 @@ namespace LinkedListOperation
             Console.WriteLine("Enter 6-to Delete Last data of Linked List");
             Console.WriteLine("Enter 7-to Search data from Linked List");
             Console.WriteLine("Enter 8-to Add node at specified position from Linked List");
+            Console.WriteLine("Enter 9-to Delete specified node and  print size of Linked List");
+            Console.WriteLine("Enter 10-to sort Linked List in Ascending order during Insertion");
             int ch = Convert.ToInt32(Console.ReadLine());
             switch (ch)
             {
@@ -93,6 +95,12 @@ namespace LinkedListOperation
                     //Usecase 9- Seach and delete an element
                     int linkedListSize = obj.DeleteInBetween(40);
                     Console.WriteLine("\nTotal size of Linked list is: {0}", linkedListSize);
+                    break;
+                case 10:
+                    obj.Add(56);
+                    obj.Add(30);
+                    obj.Add(40);
+                    obj.Add(70);
                     break;
             }
         }

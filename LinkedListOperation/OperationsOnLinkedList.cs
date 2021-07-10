@@ -172,6 +172,45 @@ namespace LinkedListOperations
             }
             return temp;
         }
+        public void Add(int data)
+        {
+            Node newNode = new Node(data);
+            Sorted(newNode);
+            Console.WriteLine("\n*****DISPLAYING SORTED LINKED LIST VALUES*****");
+            Display();
+
+        }
+        public void Sorted(Node newNode)
+        {
+            Node temp = head;
+            if (temp == null || head.data >= newNode.data)
+            {
+                newNode.next = head;
+                head = newNode;
+            }
+            else if (head.next == null && head.data < newNode.data)
+            {
+                head.next = newNode;
+            }
+            else
+            {
+                if (temp.next.data > newNode.data)
+                {
+                    newNode.next = temp.next;
+                    temp.next = newNode;
+                }
+                else
+                {
+                    while (temp.next != null && temp.next.data < newNode.data)
+                    {
+                        temp = temp.next;
+                    }
+                    newNode.next = temp.next;
+                    temp.next = newNode;
+
+                }
+            }
+        }
         //Display Linked list Data
         public void Display()
         {
