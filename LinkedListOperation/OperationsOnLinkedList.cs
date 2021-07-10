@@ -47,6 +47,35 @@ namespace LinkedListOperations
             }
 
         }
+        //Insert a node between two nodes
+        public int InsertAtSpecificPosition(int searchdata, int data)
+        {
+            Node temp = SearchDataAtPosition(searchdata);
+            Node newNode = new Node(data);
+            newNode.next = temp.next;
+            temp.next = newNode;
+            Display();
+            return (newNode.data);
+
+        }
+        //Search a particular data
+        public Node SearchDataAtPosition(int value)
+        {
+            Node temp = head;
+            int count = 1;
+            while (temp != null)
+            {
+                if (temp.data == value)
+                {
+                    Console.WriteLine("\nFound {0} at index {1}", temp.data, count);
+                    return temp;
+                }
+                temp = temp.next;
+                count++;
+            }
+            Console.WriteLine("\nCould not find value in Linked List!");
+            return default;
+        }
         //Search a particular data
         public int SearchData(int value)
         {

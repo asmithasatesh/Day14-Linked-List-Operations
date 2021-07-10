@@ -16,6 +16,7 @@ namespace LinkedListOperation
             Console.WriteLine("Enter 5-to Delete at first data of Linked List");
             Console.WriteLine("Enter 6-to Delete Last data of Linked List");
             Console.WriteLine("Enter 7-to Search data from Linked List");
+            Console.WriteLine("Enter 8-to Add node at specified position from Linked List");
             int ch = Convert.ToInt32(Console.ReadLine());
             switch (ch)
             {
@@ -74,6 +75,14 @@ namespace LinkedListOperation
                     //Pop Last Node
                     int searchValue = obj.SearchData(30);
                     Console.WriteLine(searchValue);
+                    break;
+                case 8:
+                    obj.InsertLast(56);
+                    obj.InsertLast(30);
+                    obj.InsertLast(70);
+                    obj.Display();
+                    int value = obj.InsertAtSpecificPosition(30, 40);
+                    Console.WriteLine("Inserted Value {0} to linked List", value);
                     break;
             }
         }
